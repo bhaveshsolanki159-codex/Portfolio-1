@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavesh Solanki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+
+
+        }
+
+        /* nav bar */
+
+        nav {
+            height: 60px;
+            align-items: center;
+            background-color: rgb(1, 1, 38);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            /* padding: 10px; */
+            cursor: pointer;
+            margin: 0 15px;
+            /* font-size: 0.9rem; */
+        }
+
+        nav ul li:hover {
+            color: rgb(134, 58, 205);
+            font-size: 1.03rem;
+        }
+
+        /* section */
+
+        .herosection {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            margin-bottom: 89px;
+            align-items: center;
+            /* height: 90vh; */
+        }
+
+        .herosection>div {
+            width: 36%;
+        }
+
+        .left-content {
+            /* background-color: red; */
+            font-size: 2.7rem;
+            color: white;
+
+            /* margin: 60px;
+            margin-bottom: 0; */
+        }
+
+        .purple {
+            color: rgb(134, 58, 205);
+        }
+
+        .grey {
+            color: grey;
+        }
+
+        #element {
+            color: rgb(134, 58, 205);
+        }
+
+        .right-content img {
+            /* margin: 35px; */
+            margin: 59px;
+            margin-bottom: 0;
+        }
+
+        main hr {
+            border: 0;
+            height: 1.2px;
+            background-color: rgb(134, 58, 205);
+            margin: 40px 84px;
+        }
+
+        .Work {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .Work .box {
+            background-color: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .Work .box .vertical {
+            background-color: rgb(134, 58, 205);
+            width: 1px;
+            height: 90px;
+        }
+
+        .image-top {
+            width: 39px;
+            position: relative;
+            /* top: -40px; */
+            bottom: 40px;
+            left: -18px;
+        }
+
+        .vertical-title {
+            width: 150px;
+            color: white;
+            /* font-size: 1.2rem; */
+            position: relative;
+            top: 55px;
+            left: -10px;
+            
+        }
+
+        .vertical-content {
+            width: 200px;
+            position: relative;
+            top: 55px;
+            left: -12px;
+            margin: 10px 0;
+            color: rgb(101 226 204);
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="left">Bhavesh Solanki</div>
+        <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Project</li>
+                <li>Work</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- hero section -->
+
+        <section class="herosection">
+            <div class="left-content">
+                Hello, I'm <span class="purple">Bhavesh</span>
+                <div>and I'm a passionate </div>
+                <!-- <div>web developer</div> -->
+                <span id="element"></span>
+            </div>
+            <div class="right-content">
+                <img src="developer2.webp" width="100%">
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Past Experience -->
+
+        <section class="Work">
+            <span class="grey">what i had done before!</span>
+            <h1 style="color: white;">Work Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="youtube.webp" alt="">
+                    <div class="vertical-title">
+                        <h3>Web-Developer</h3>
+                        <div>(2024-2025)</div>
+                        <div>Freelencer</div>
+                    </div>
+                    <div class="vertical-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="data.webp" alt="">
+                    <div class="vertical-title">
+                        <h3>Data Analyst</h3>
+                        <div>(2022-2024)</div>
+                        <div>ScaleAI</div>
+                    </div>
+                    <div class="vertical-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="social.webp" alt="">
+                    <div class="vertical-title">
+                        <h3>Content Writer</h3>
+                        <div>(2023-2025)</div>
+                        <div>Freelencer</div>
+                    </div>
+                    <div class="vertical-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="social.webp" alt="">
+                    <div class="vertical-title">
+                        <h3>social media manager</h3>
+                        <div>(2019-2021)</div>
+                        <div>Freelencer</div>
+                    </div>
+                    <div class="vertical-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Designer', 'Freelancer', 'Data Analyst', 'Content Writer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
