@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .purple {
+            color: rgb(134, 58, 205);
+        }
+
+        .grey {
+            color: grey;
+        }
+
+        #element {
+            color: rgb(134, 58, 205);
+        }
+
+        .Work {
+            max-width: 100vw;
+            margin: 40px 50px;
+            height: auto;
+            /* padding: 10px 20px; */
+        }
+
+        /* Project section */
+
+        .box-project .cases {
+            /* border: 1px solid white; */
+            height: max-content;
+
+            border-radius: 5px;
+            display: grid;
+            /* flex-wrap: wrap; */
+            grid-template-columns: 50vh 50vh 50vh;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 15px;
+            /* background-color: #1a1a1a; */
+            background-color: black;
+            /* box-shadow: 0 4px 8px rgba(134, 58, 205, 0.3); */
+        }
+
+        .Work .box-project .casebox {
+            color: white;
+            font-size: large;
+            font-family: "Open Sans", sans-serif;
+            /* letter-spacing: 2px; */
+            border: 1px solid;
+            border-radius: 5px;
+            height: auto; /* 25vh */
+            width: 50vh;
+            margin: 15px;
+            padding: 15px;
+            /* Removed background color */
+            background: transparent;
+            /* box-shadow: 0 4px 15px whitesmoke; */
+            transition: border-color 0.3s ease;
+            display: flexbox;
+            /* flex-wrap: wrap; */
+            flex-direction: column;
+            justify-content: left;
+            cursor: pointer;
+            /* position: relative; */
+            border: 2px solid transparent;
+        }
+
+        .Work .box-project .casebox:hover {
+            border-color: white;
+            /* box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7); */
+            transform: none;
+        }
+
+        .Work .box-project .view-more-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .Work .box-project .view-more-btn:hover {
+            background-color: white;
+            color: #6a0dad;
+        }
+
+        .Work .box-project .casebox .heading {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .casebox .discription {
+            margin-top: 15px;
+            height: auto;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            unicode-bidi: isolate;
+        }
+
+        .casebox .skill {
+            margin-top: 15px;
+            color: black;
+
+        }
+
+        .casebox .skill button {
+            color: black;
+            background-color: white;
+            border: 2px solid white;
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        .casebox .card-links{
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            .Work .box-project .cases {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            .Work .box-project .cases .casebox{
+                width: auto;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="Work">
+        <span class="grey">My work!</span>
+        <h1 style="color: white; font-size: xx-large;">Projects</h1>
+        <div class="box-project">
+            <h2 style="color: white; font-size:x-large; margin-left: 5vh; margin-top: 40px;">Main Project</h2>
+            <div class="cases">
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="developer.webp" alt="Portfolio Website" width="40px">
+                        <h3>Portfolio Website</h3>
+                    </div>
+                    <div class="discription">
+                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                        skills.
+                    </div>
+                    <div class="skill">
+                        <span><button>HTML</button></span>
+                        <span><button>CSS</button></span>
+                        <span><button>JavaScript</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links">
+                        <a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+
+                </div>
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="developer.webp" alt="Portfolio Website" width="40px">
+                        <h3>Portfolio Website</h3>
+                    </div>
+                    <div class="discription">
+                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                        skills.
+                    </div>
+                    <div class="skill">
+                        <span><button>HTML</button></span>
+                        <span><button>CSS</button></span>
+                        <span><button>JavaScript</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links">
+                        <a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+
+                </div>
+
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="data.webp" alt="Data Analysis Tool" width="40px">
+                        <h3>Data Analysis Tool</h3>
+                    </div>
+                    <div class="discription">
+                        A tool for analyzing datasets using Python and Pandas to extract meaningful insights.
+                    </div>
+                    <div class="skill">
+                        <span><button>Python</button></span>
+                        <span><button>Pandas</button></span>
+                        <span><button>Data Analysis</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/data-analysis-tool" class="view-more-btn"
+                            target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links"><a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+
+                </div>
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="social.webp" alt="Blog Platform" width="40px">
+                        <h3>Blog Platform</h3>
+                    </div>
+                    <div class="discription">
+                        A blogging platform with user authentication and content management features built with React
+                        and Node.js.
+                    </div>
+                    <div class="skill">
+                        <span><button>React</button></span>
+                        <span><button>Node.js</button></span>
+                        <span><button>MongoDB</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/blog-platform" class="view-more-btn" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links"><a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box-project">
+            <h2 style="color: white; font-size:x-large; margin-left: 5vh; margin-top: 40px;">Learing Project</h2>
+            <div class="cases">
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="developer.webp" alt="Portfolio Website" width="40px">
+                        <h3>Portfolio Website</h3>
+                    </div>
+                    <div class="discription">
+                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                        skills.
+                    </div>
+                    <div class="skill">
+                        <span><button>HTML</button></span>
+                        <span><button>CSS</button></span>
+                        <span><button>JavaScript</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links"><a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+                </div>
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="data.webp" alt="Data Analysis Tool" width="40px">
+                        <h3>Data Analysis Tool</h3>
+                    </div>
+                    <div class="discription">
+                        A tool for analyzing datasets using Python and Pandas to extract meaningful insights.
+                    </div>
+                    <div class="skill">
+                        <span><button>Python</button></span>
+                        <span><button>Pandas</button></span>
+                        <span><button>Data Analysis</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/data-analysis-tool" class="view-more-btn"
+                            target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links"><a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+                </div>
+                <div class="casebox">
+                    <div class="heading">
+                        <img src="social.webp" alt="Blog Platform" width="40px">
+                        <h3>Blog Platform</h3>
+                    </div>
+                    <div class="discription">
+                        A blogging platform with user authentication and content management features built with React
+                        and Node.js.
+                    </div>
+                    <div class="skill">
+                        <span><button>React</button></span>
+                        <span><button>Node.js</button></span>
+                        <span><button>MongoDB</button></span>
+                    </div>
+                    <!-- <div style="text-align: center; margin-top: 15px;">
+                        <a href="https://github.com/yourusername/blog-platform" class="view-more-btn" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div> -->
+                    <div class="card-links"><a class="anchors" href="/projects/0">
+                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
+                                    </path>
+                                </svg></p>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    // Add click event to project boxes
+    document.addEventListener('DOMContentLoaded', function () {
+        const projects = document.querySelectorAll('.casebox');
+        projects.forEach(project => {
+            project.addEventListener('click', function () {
+                projects.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                alert('Selected project: ' + this.querySelector('h3').textContent);
+            });
+        });
+    });
+</script>
+
+</html>

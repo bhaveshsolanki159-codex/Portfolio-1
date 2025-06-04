@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+        }
+
+        .purple {
+            color: rgb(134, 58, 205);
+        }
+
+        .grey {
+            color: grey;
+        }
+
+        #element {
+            color: rgb(134, 58, 205);
+        }
+
+        .Work {
+            max-width: 80vw;
+            margin: 40px auto;
+            height: auto;
+            padding: 10px 20px;
+        }
+
+        .work-experience .work-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding: 20px;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(134, 58, 205, 0.3);
+        }
+
+        .work-experience .work-card {
+            /* Removed background color */
+            background: transparent;
+            border-radius: 10px;
+            /* box-shadow: 0 4px 15px rgba(134, 58, 205, 0.6); */
+            color: white;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+            flex-direction: row;
+            align-items: center;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+
+
+        .work-experience .work-card:hover {
+            border-color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);
+            transform: none;
+        }
+
+        .work-experience .view-more-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .work-experience .view-more-btn:hover {
+            background-color: white;
+            color: #6a0dad;
+        }
+
+        .work-experience .work-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .work-experience .view-more-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .work-experience .view-more-btn:hover {
+            background-color: white;
+            color: #6a0dad;
+        }
+
+        .work-experience .work-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .work-experience .work-info h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .work-experience .work-duration,
+        .work-experience .work-company {
+            font-size: 0.9rem;
+            color: rgb(101 226 204);
+        }
+
+        .work-experience .work-info p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="Work work-experience">
+        <span class="grey">what i had done before!</span>
+        <h1 style="color:white; font-size: xx-large;">Work Experience</h1>
+        <div class="work-container">
+            <div class="work-card">
+                <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                <div class="work-info">
+                    <h3>Web Developer</h3>
+                    <span class="work-duration">(2024-2025)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="data.webp" alt="Data Analyst">
+                <div class="work-info">
+                    <h3>Data Analyst</h3>
+                    <span class="work-duration">(2022-2024)</span>
+                    <span class="work-company">ScaleAI</span>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="social.webp" alt="Content Writer">
+                <div class="work-info">
+                    <h3>Content Writer</h3>
+                    <span class="work-duration">(2023-2025)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="social.webp" alt="Social Media Manager">
+                <div class="work-info">
+                    <h3>Social Media Manager</h3>
+                    <span class="work-duration">(2019-2021)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                <div class="work-info">
+                    <h3>Web Developer</h3>
+                    <span class="work-duration">(2024-2025)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                <div class="work-info">
+                    <h3>Web Developer</h3>
+                    <span class="work-duration">(2024-2025)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                <div class="work-info">
+                    <h3>Web Developer</h3>
+                    <span class="work-duration">(2024-2025)</span>
+                    <span class="work-company">Freelancer</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        /* Add click effect to work experience cards */
+        document.addEventListener('DOMContentLoaded', function () {
+            const workCards = document.querySelectorAll('.work-card');
+            workCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    workCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    alert('Selected job: ' + this.querySelector('h3').textContent + '\nCompany: ' + this.querySelector('.work-company').textContent + '\nDuration: ' + this.querySelector('.work-duration').textContent + '\nDescription: ' + this.querySelector('p').textContent);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
