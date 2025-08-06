@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Language and region -->
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+
+<!-- Preconnect to external domains for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net.net">
+
+<!-- DNS prefetch for social media -->
+<link rel="dns-prefetch" href="//linkedin.com">
+<link rel="dns-prefetch" href="//github.com">
+<link rel="dns-prefetch" href="//x.com">
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta name="title" content="Projects | Bhavesh Solanki - Portfolio">
+    <meta name="description"
+        content="Explore Bhavesh Solanki's projects including web development, data analysis, and AI applications built with modern technologies.">
+    <meta property="og:title" content="Projects | Bhavesh Solanki">
+    <meta property="og:description" content="Collection of web development and data science projects.">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bhavesh Solanki",
+        "url": "https://yourdomain.com",
+        "jobTitle": "AI & Data Science Student",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Parul University"
+        },
+        "knowsAbout": ["Web Development", "Data Science", "Python", "JavaScript", "HTML", "CSS"],
+        "sameAs": [
+            "https://linkedin.com/in/bhavesh-solanki-5bb6b8325",
+            "https://github.com/bhaveshsolanki159-codex",
+            "https://x.com/oyeebhao"
+        ]
+        }
+    </script>
+
+    <title>Projects | Bhavesh Solanki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <style>
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+
+        body {
             background-color: black;
-            font-family: "Open Sans", sans-serif;
+            color: white;
+        }
+
+        .Work {
+            max-width: 100vw;
+            padding: 40px 5vw;
         }
 
         .purple {
@@ -21,135 +77,308 @@
             color: grey;
         }
 
-        #element {
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .herosection {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            min-height: 60vh;
+            max-height: 80vh;
+            gap: 20px;
+
+        }
+
+        /* side-nav */
+
+        nav {
+            height: 60px;
+            align-items: center;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            color: rgb(134, 58, 205);
+            font-size: 1.03rem;
+        }
+
+        .herosection>nav.side-nav {
+            position: fixed;
+            /* top: 25vh; */
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            width: 60px;
+            height: 300px;
+            background-color: black;
+            border-radius: 0 10px 10px 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .herosection>nav.side-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .herosection>nav.side-nav ul li {
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .herosection>nav.side-nav ul li:hover {
             color: rgb(134, 58, 205);
         }
 
-        .Work {
-            max-width: 100vw;
-            margin: 40px 50px;
-            height: auto;
-            /* padding: 10px 20px; */
-        }
 
-        /* Project section */
 
-        .box-project .cases {
-            /* border: 1px solid white; */
-            height: max-content;
 
-            border-radius: 5px;
+        .cases {
             display: grid;
-            /* flex-wrap: wrap; */
-            grid-template-columns: 50vh 50vh 50vh;
-            justify-content: space-around;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 15px;
-            /* background-color: #1a1a1a; */
-            background-color: black;
-            /* box-shadow: 0 4px 8px rgba(134, 58, 205, 0.3); */
         }
 
-        .Work .box-project .casebox {
-            color: white;
-            font-size: large;
-            font-family: "Open Sans", sans-serif;
-            /* letter-spacing: 2px; */
-            border: 1px solid;
-            border-radius: 5px;
-            height: auto; /* 25vh */
-            width: 50vh;
-            margin: 15px;
-            padding: 15px;
-            /* Removed background color */
-            background: transparent;
-            /* box-shadow: 0 4px 15px whitesmoke; */
-            transition: border-color 0.3s ease;
-            display: flexbox;
-            /* flex-wrap: wrap; */
-            flex-direction: column;
-            justify-content: left;
-            cursor: pointer;
-            /* position: relative; */
+        .casebox {
+            background: #111;
             border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 20px;
+            transition: 0.3s ease;
         }
 
-        .Work .box-project .casebox:hover {
+        .casebox:hover {
             border-color: white;
-            /* box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7); */
-            transform: none;
         }
 
-        .Work .box-project .view-more-btn {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 5px 10px;
-            font-size: 0.8rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .Work .box-project .view-more-btn:hover {
-            background-color: white;
-            color: #6a0dad;
-        }
-
-        .Work .box-project .casebox .heading {
+        .heading {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
             gap: 10px;
-            font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
-        .casebox .discription {
+        .discription {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .skill {
             margin-top: 15px;
-            height: auto;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            display: block;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            unicode-bidi: isolate;
         }
 
-        .casebox .skill {
-            margin-top: 15px;
-            color: black;
-
-        }
-
-        .casebox .skill button {
-            color: black;
+        .skill button {
             background-color: white;
-            border: 2px solid white;
-            padding: 3px;
-            border-radius: 10px;
+            color: black;
+            border: none;
+            margin: 2px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: default;
         }
 
-        .casebox .card-links{
+        .card-links {
             margin-top: 10px;
         }
 
-        @media (max-width: 1000px) {
-            .Work .box-project .cases {
+        .card-links a {
+            color: rgb(134, 58, 205);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            font-size: large;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: black;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            width: 50px;
+            height: 43vh;
+            position: fixed;
+            right: 0;
+            top: 42vh;
+        }
+
+        }
+
+        .contact {
+            width: 33px;
+            text-align: center;
+
+        }
+
+        .contact span {
+            cursor: pointer;
+        }
+
+
+        /* Responsive for tablets (<=1024px) */
+        @media screen and (max-width: 1024px) {
+            .box-project .cases {
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: center;
+            }
+
+            .Work {
+                margin: 20px 20px;
+            }
+
+            .Work .box-project .casebox {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+
+        /* Responsive for mobile phones (<=768px) */
+        /* === Mobile & Tablet (max-width: 768px) === */
+        @media screen and (max-width: 768px) {
+            .herosection>nav.side-nav {
+                position: fixed !important;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
                 display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            nav.side-nav ul {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+
+
+            .herosection>nav.side-nav ul {
+                flex-direction: row;
+                gap: 30px;
+                width: 100%;
+                justify-content: space-evenly;
                 align-items: center;
             }
 
-            .Work .box-project .cases .casebox{
-                width: auto;
+            .herosection>nav.side-nav ul li {
+                font-size: 1.6rem;
+            }
 
+            /* Contact toggle button */
+            .contact {
+                position: fixed;
+                top: 42;
+                bottom: 80px;
+                right: 20px;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+                display: none;
+            }
+
+            .contact.active {
+                display: flex;
+            }
+
+            .contact span {
+                transform: translateY(0);
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+
+            /* Floating toggle */
+            #contact-toggle {
+                /* position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1001;
+                width: 50px;
+                height: 50px;
+                background-color: rgb(134, 58, 205);
+                color: white;
+                border-radius: 50%;
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                user-select: none;
+                transition: transform 0.3s ease; */
+                position: fixed;
+                bottom: 60px;
+                right: 0;
+                z-index: 1001;
+                width: 33px;
+                height: 46px;
+                background-color: rgb(134, 58, 205);
+                color: white;
+                border-radius: 10%;
+                font-size: 1.8rem;
+                text-align: center;
+                /* line-height: 50px; */
+                cursor: pointer;
+                user-select: none;
+                transition: transform 0.3s ease;
+            }
+
+            #contact-toggle:hover {
+                transform: scale(1.1);
+            }
+
+
+            /* Project cards realignment (already mostly done) */
+            .box-project .cases {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
     </style>
@@ -158,227 +387,174 @@
 <body>
     <section class="Work">
         <span class="grey">My work!</span>
-        <h1 style="color: white; font-size: xx-large;">Projects</h1>
-        <div class="box-project">
-            <h2 style="color: white; font-size:x-large; margin-left: 5vh; margin-top: 40px;">Main Project</h2>
-            <div class="cases">
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="developer.webp" alt="Portfolio Website" width="40px">
-                        <h3>Portfolio Website</h3>
-                    </div>
-                    <div class="discription">
-                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
-                        skills.
-                    </div>
-                    <div class="skill">
-                        <span><button>HTML</button></span>
-                        <span><button>CSS</button></span>
-                        <span><button>JavaScript</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links">
-                        <a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
+        <h1 style="font-size: xx-large;">Projects</h1>
 
-                </div>
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="developer.webp" alt="Portfolio Website" width="40px">
-                        <h3>Portfolio Website</h3>
-                    </div>
-                    <div class="discription">
-                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
-                        skills.
-                    </div>
-                    <div class="skill">
-                        <span><button>HTML</button></span>
-                        <span><button>CSS</button></span>
-                        <span><button>JavaScript</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links">
-                        <a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
+        <div class="herosection">
+            <nav class="side-nav">
+                <ul>
+                    <li title="Home"><a href="index.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">🏠</span></a></li>
+                    <li title="About"><a href="about.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">👤</span></a></li>
+                    <li title="Projects"><a href="project.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">📁</span></a></li>
+                    <li title="Work"><a href="work.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">💼</span></a></li>
+                </ul>
+            </nav>
 
-                </div>
 
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="data.webp" alt="Data Analysis Tool" width="40px">
-                        <h3>Data Analysis Tool</h3>
+            <div class="box-project">
+                <h2>Main Projects</h2>
+                <div class="cases">
+                    <!-- Project cards inserted here dynamically or manually -->
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="developer.webp" alt="Project Icon" width="30">
+                            <span>Portfolio Website</span>
+                        </div>
+                        <div class="discription">
+                            A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                            skills.
+                        </div>
+                        <div class="skill">
+                            <button>HTML</button>
+                            <button>CSS</button>
+                            <button>JavaScript</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
                     </div>
-                    <div class="discription">
-                        A tool for analyzing datasets using Python and Pandas to extract meaningful insights.
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="developer.webp" alt="Project Icon" width="30">
+                            <span>Portfolio Website</span>
+                        </div>
+                        <div class="discription">
+                            A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                            skills.
+                        </div>
+                        <div class="skill">
+                            <button>HTML</button>
+                            <button>CSS</button>
+                            <button>JavaScript</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
                     </div>
-                    <div class="skill">
-                        <span><button>Python</button></span>
-                        <span><button>Pandas</button></span>
-                        <span><button>Data Analysis</button></span>
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="developer.webp" alt="Project Icon" width="30">
+                            <span>Portfolio Website</span>
+                        </div>
+                        <div class="discription">
+                            A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                            skills.
+                        </div>
+                        <div class="skill">
+                            <button>HTML</button>
+                            <button>CSS</button>
+                            <button>JavaScript</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
                     </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/data-analysis-tool" class="view-more-btn"
-                            target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links"><a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="developer.webp" alt="Project Icon" width="30">
+                            <span>Portfolio Website</span>
+                        </div>
+                        <div class="discription">
+                            A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                            skills.
+                        </div>
+                        <div class="skill">
+                            <button>HTML</button>
+                            <button>CSS</button>
+                            <button>JavaScript</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="developer.webp" alt="Project Icon" width="30">
+                            <span>Portfolio Website</span>
+                        </div>
+                        <div class="discription">
+                            A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
+                            skills.
+                        </div>
+                        <div class="skill">
+                            <button>HTML</button>
+                            <button>CSS</button>
+                            <button>JavaScript</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
+                    </div>
 
-                </div>
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="social.webp" alt="Blog Platform" width="40px">
-                        <h3>Blog Platform</h3>
-                    </div>
-                    <div class="discription">
-                        A blogging platform with user authentication and content management features built with React
-                        and Node.js.
-                    </div>
-                    <div class="skill">
-                        <span><button>React</button></span>
-                        <span><button>Node.js</button></span>
-                        <span><button>MongoDB</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/blog-platform" class="view-more-btn" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links"><a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
+                    <!-- Repeat for more projects -->
                 </div>
             </div>
-        </div>
 
-
-        <div class="box-project">
-            <h2 style="color: white; font-size:x-large; margin-left: 5vh; margin-top: 40px;">Learing Project</h2>
-            <div class="cases">
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="developer.webp" alt="Portfolio Website" width="40px">
-                        <h3>Portfolio Website</h3>
+            <div class="box-project" style="margin-top: 40px; padding-bottom: 50px;">
+                <h2>Learning Projects</h2>
+                <div class="cases">
+                    <!-- Sample project again -->
+                    <div class="casebox">
+                        <div class="heading">
+                            <img src="data.webp" alt="Project Icon" width="30">
+                            <span>Data Analysis Tool</span>
+                        </div>
+                        <div class="discription">
+                            A tool for analyzing datasets using Python and Pandas to extract meaningful insights.
+                        </div>
+                        <div class="skill">
+                            <button>Python</button>
+                            <button>Pandas</button>
+                            <button>Data Analysis</button>
+                        </div>
+                        <div class="card-links">
+                            <a href="/projects/0">Know More &rarr;</a>
+                        </div>
                     </div>
-                    <div class="discription">
-                        A personal portfolio website built with HTML, CSS, and JavaScript to showcase projects and
-                        skills.
-                    </div>
-                    <div class="skill">
-                        <span><button>HTML</button></span>
-                        <span><button>CSS</button></span>
-                        <span><button>JavaScript</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/portfolio" class="view-more-btn" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links"><a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
                 </div>
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="data.webp" alt="Data Analysis Tool" width="40px">
-                        <h3>Data Analysis Tool</h3>
-                    </div>
-                    <div class="discription">
-                        A tool for analyzing datasets using Python and Pandas to extract meaningful insights.
-                    </div>
-                    <div class="skill">
-                        <span><button>Python</button></span>
-                        <span><button>Pandas</button></span>
-                        <span><button>Data Analysis</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/data-analysis-tool" class="view-more-btn"
-                            target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links"><a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
-                </div>
-                <div class="casebox">
-                    <div class="heading">
-                        <img src="social.webp" alt="Blog Platform" width="40px">
-                        <h3>Blog Platform</h3>
-                    </div>
-                    <div class="discription">
-                        A blogging platform with user authentication and content management features built with React
-                        and Node.js.
-                    </div>
-                    <div class="skill">
-                        <span><button>React</button></span>
-                        <span><button>Node.js</button></span>
-                        <span><button>MongoDB</button></span>
-                    </div>
-                    <!-- <div style="text-align: center; margin-top: 15px;">
-                        <a href="https://github.com/yourusername/blog-platform" class="view-more-btn" target="_blank"
-                            rel="noopener noreferrer">GitHub</a>
-                    </div> -->
-                    <div class="card-links"><a class="anchors" href="/projects/0">
-                            <p>Know More <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                    viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z">
-                                    </path>
-                                </svg></p>
-                        </a></div>
-                </div>
+            </div>
+            <!-- social media link  -->
+            <div class="contact" style="width: 50px; height: 43vh; position: fixed; right: 0;">
+                <span><a href="https://linkedin.com/in/
+                    bhavesh-solanki-5bb6b8325" style="text-decoration-line: none;" target="_blank"><img
+                            title="Linkedin" src="linkedin.png" width="34px"></a></span>
+                <span><a href="https://github.com/bhaveshsolanki159-codex" style="text-decoration-line: none;"
+                        target="_blank"><img title="Github" src="github.png" width="34px" alt=""></a></span>
+                <span><a href="https://x.com/oyeebhao" style="text-decoration-line: none;" target="_blank"><img
+                            title="Twitter" src="twitter.png" width="34px" alt=""></a></span>
+                <span><a href="mailto:your-bhaveshsolankibj960@gmail.com" style="text-decoration-line: none;"><img
+                            title="Mail" src="gmail.png" width="34px"></a></span>
             </div>
         </div>
     </section>
-</body>
+    <!-- Floating toggle for contact -->
+    <div id="contact-toggle">▲</div>
 
+</body>
 <script>
-    // Add click event to project boxes
-    document.addEventListener('DOMContentLoaded', function () {
-        const projects = document.querySelectorAll('.casebox');
-        projects.forEach(project => {
-            project.addEventListener('click', function () {
-                projects.forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
-                alert('Selected project: ' + this.querySelector('h3').textContent);
-            });
-        });
+    const toggle = document.getElementById('contact-toggle');
+    const contact = document.querySelector('.contact');
+
+    toggle.innerHTML = '▲'; // Default collapsed state
+
+    toggle.addEventListener('click', () => {
+        contact.classList.toggle('active');
+        toggle.innerHTML = contact.classList.contains('active') ? '▼' : '▲';
     });
 </script>
+
 
 </html>
