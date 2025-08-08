@@ -1,38 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            font-family: "Open Sans", sans-serif;
-            background-color: black;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="About | Bhavesh Solanki - AI & Data Science Student" />
+    <meta name="description"
+        content="Learn about Bhavesh Solanki's journey as a B.Tech AI & Data Science student, skills in web development, and passion for creating impactful digital solutions." />
+    <meta property="og:title" content="About | Bhavesh Solanki" />
+    <meta property="og:description" content="Discover the story, skills, and aspirations of Bhavesh Solanki." />
+    <link rel="canonical" href="https://yourdomain.com/about.html" />
+
+    <!-- Fonts & CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Bhavesh Solanki",
+            "url": "https://yourdomain.com",
+            "jobTitle": "AI & Data Science Student",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Parul University"
+            },
+            "knowsAbout": ["Web Development", "Data Science", "Python", "JavaScript", "HTML", "CSS"],
+            "sameAs": [
+                "https://linkedin.com/in/bhavesh-solanki-5bb6b8325",
+                "https://github.com/bhaveshsolanki159-codex",
+                "https://x.com/oyeebhao"
+            ]
         }
-        .purple {
-            color: rgb(134, 58, 205);
+    </script>
+
+    <title>About | Bhavesh Solanki</title>
+
+    <style>
+        :root {
+            --main-purple: #8640f4;
+            --text-grey: #ccc;
+            --hover-purple: #a36df7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-grey);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        h1,
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        h2::before {
+            content: '▸ ';
+            color: var(--main-purple);
+        }
+
+        strong {
+            color: var(--main-purple);
+        }
+
+        .Work {
+            padding: 60px 8vw;
+            max-width: 100vw;
         }
 
         .grey {
             color: grey;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
         }
-        .Work {
-            max-width: 80vw;
-            margin: 40px auto;
-            height: auto;
-            padding: 10px 20px;
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
         }
+
+        .about-section p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            /* padding-left: 20px; */
+            padding: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            list-style: none;
+        }
+
+        .nav-icon {
+            font-size: 1.7rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-icon:hover {
+            color: var(--hover-purple);
+            transform: scale(1.1);
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 25vh;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            width: 53px;
+            height: 300px;
+            background-color: black;
+            border-radius: 0 10px 10px 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .side-nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact {
+            position: fixed;
+            right: 0;
+            top: 42vh;
+            width: 50px;
+            height: 43vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: black;
+            border-radius: 10px 0 0 10px;
+            align-items: center;
+        }
+
+        .contact img {
+            width: 34px;
+            transition: transform 0.2s ease;
+        }
+
+        .contact img:hover {
+
+            transform: scale(1.1);
+        }
+
+        .title-text {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* Tablets (<= 1024px) */
+        @media screen and (max-width: 1024px) {
+            .Work {
+                padding: 50px 6vw;
+            }
+
+            .title-text {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .side-nav {
+                top: 20vh;
+                width: 48px;
+            }
+
+            .side-nav ul li a {
+                font-size: 1.5rem;
+            }
+
+            .contact {
+                width: 44px;
+                height: auto;
+                top: auto;
+                bottom: 10px;
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                border-radius: 10px;
+                padding: 5px;
+            }
+
+            .contact img {
+                width: 30px;
+            }
+        }
+
+        /* Mobile Phones (<= 768px) */
+        @media screen and (max-width: 768px) {
+            .Work {
+                padding: 40px 5vw;
+            }
+
+            .title-text {
+                font-size: 1.8rem;
+                text-align: left;
+            }
+
+            .about-section h2 {
+                font-size: 1.2rem;
+                text-align: left;
+            }
+
+            .about-section p,
+            .about-section ul {
+                font-size: 0.92rem;
+                text-align: justify;
+            }
+
+
+            .side-nav {
+                position: fixed;
+                bottom: 0;
+                top: auto;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            .side-nav ul {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .side-nav ul li a {
+                font-size: 1.4rem;
+            }
+
+            /* Contact toggle button */
+            .contact {
+                position: fixed;
+                bottom: 16%;
+                right: 0;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 32px;
+                display: none;
+            }
+
+            .contact.active {
+                display: flex;
+            }
+
+            .contact span {
+                transform: translateY(0);
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+
+            /* Floating toggle */
+            #contact-toggle {
+                /* position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1001;
+                width: 50px;
+                height: 50px;
+                background-color: rgb(134, 58, 205);
+                color: white;
+                border-radius: 50%;
+                font-size: 1.8rem;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                user-select: none;
+                transition: transform 0.3s ease; */
+                position: fixed;
+                bottom: 60px;
+                right: 2px;
+                z-index: 1001;
+                width: 33px;
+                height: 46px;
+                background-color: rgb(134, 58, 205);
+                color: white;
+                border-radius: 10%;
+                font-size: 1.8rem;
+                text-align: center;
+                /* line-height: 50px; */
+                cursor: pointer;
+                user-select: none;
+                transition: transform 0.3s ease;
+            }
+
+            #contact-toggle:hover {
+                transform: scale(1.1);
+            }
     </style>
 </head>
 
 <body>
     <section class="Work">
-        <span class="grey">My Vision and Experties</span>
-        <h1 style="color: white;">About me</h1>
+        <div>
+            <span class="grey">My Story, Skills & Aspirations</span>
+            <h1 class="title-text">About Me</h1>
+        </div>
+
+        <nav class="side-nav">
+            <ul>
+                <li title="Home"><a href="index.html"><span class="nav-icon">🏠</span></a></li>
+                <li title="About"><a href="about.html"><span class="nav-icon">👤</span></a></li>
+                <li title="Projects"><a href="project.html"><span class="nav-icon">📁</span></a></li>
+                <li title="Work"><a href="work.html"><span class="nav-icon">💼</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="about-section">
+            <h2>Who I Am</h2>
+            <p>
+                Hi, I'm <strong>Bhavesh Solanki</strong> — a passionate <strong>B.Tech Computer Science student</strong>
+                at Parul University, specializing in <strong>Artificial Intelligence and Data Science</strong>. From my
+                early school days, I was captivated by <strong>mathematics</strong> and <strong>technology</strong>.
+                Growing up in a tech-influenced family nurtured my curiosity to explore the logic behind machines and
+                systems.
+            </p>
+
+            <h2>My Journey</h2>
+            <p>
+                Starting my B.Tech journey was exciting but also confusing due to the vast tech
+                landscape—<strong>AI</strong>, <strong>Web Development</strong>, <strong>Cybersecurity</strong>,
+                <strong>Blockchain</strong>, and <strong>Data Science</strong>. In my first semester, I experimented
+                with all, and gradually two stood out: <strong>Blockchain</strong> and <strong>Data Science</strong>.
+            </p>
+            <p>
+                While Blockchain impressed me with decentralization and transparency, it was <strong>Data
+                    Science</strong> that captured both my analytical and creative instincts. Its real-world impact and
+                power to derive insights from data made me commit myself to this path.
+            </p>
+            <p>
+                Today, I’m actively building projects, strengthening my logical thinking, and developing a data-driven
+                mindset to become a well-rounded <strong>Data Scientist</strong>.
+            </p>
+
+            <h2>Vision & Goals</h2>
+            <p>
+                My mission is to use <strong>Data Science</strong> to solve real-world problems—whether in
+                <strong>healthcare</strong>, <strong>education</strong>, <strong>business</strong>, or <strong>social
+                    innovation</strong>. I’m currently exploring <strong>open-source data science projects</strong> to
+                contribute to global communities and enhance my collaborative skills.
+            </p>
+            <p>
+                I strive to keep learning, experimenting, and exploring emerging fields like <strong>AI/ML</strong>,
+                while building tools and insights that matter.
+            </p>
+
+            <h2>Beyond the Code</h2>
+            <p>When I'm not coding or crunching data, you’ll find me:</p>
+            <ul>
+                <li>☕ Sipping chai and brainstorming impact-driven ideas</li>
+                <li>🎯 Engaging in hackathons, tech clubs & developer communities</li>
+                <li>🧠 Exploring human behavior and tech ethics</li>
+                <li>🎨 Designing creative posters and digital content</li>
+            </ul>
+            <p>
+                Because behind every great coder is a curious human who thinks beyond the screen.
+            </p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="contact">
+            <span><a href="https://linkedin.com/in/bhavesh-solanki-5bb6b8325" target="_blank"><img src="linkedin.png"
+                        alt="LinkedIn" title="LinkedIn"></a></span>
+            <span><a href="https://github.com/bhaveshsolanki159-codex" target="_blank"><img src="github.png"
+                        alt="GitHub" title="GitHub"></a></span>
+            <span><a href="https://x.com/oyeebhao" target="_blank"><img src="twitter.png" alt="Twitter"
+                        title="Twitter"></a></span>
+            <span><a href="mailto:bhaveshsolankibj960@gmail.com"><img src="gmail.png" alt="Gmail"
+                        title="Mail"></a></span>
+        </div>
     </section>
+    <!-- Floating toggle for contact -->
+    <div id="contact-toggle">▲</div>
 </body>
+<script>
+    const toggle = document.getElementById('contact-toggle');
+    const contact = document.querySelector('.contact');
+
+    toggle.innerHTML = '▲'; // Default collapsed state
+
+    toggle.addEventListener('click', () => {
+        contact.classList.toggle('active');
+        toggle.innerHTML = contact.classList.contains('active') ? '▼' : '▲';
+    });
+</script>
+
 
 </html>
