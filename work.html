@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Language and region -->
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+
+<!-- Preconnect to external domains for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net.net">
+
+<!-- DNS prefetch for social media -->
+<link rel="dns-prefetch" href="//linkedin.com">
+<link rel="dns-prefetch" href="//github.com">
+<link rel="dns-prefetch" href="//x.com">
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta name="title" content="Experience | Bhavesh Solanki - Work History">
+    <meta name="description"
+        content="Professional experience and work history of Bhavesh Solanki in web development, data analysis, and content creation.">
+    <meta property="og:title" content="Experience | Bhavesh Solanki">
+    <meta property="og:description" content="Work experience in web development, data analysis, and freelancing.">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bhavesh Solanki",
+        "url": "https://yourdomain.com",
+        "jobTitle": "AI & Data Science Student",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Parul University"
+        },
+        "knowsAbout": ["Web Development", "Data Science", "Python", "JavaScript", "HTML", "CSS"],
+        "sameAs": [
+            "https://linkedin.com/in/bhavesh-solanki-5bb6b8325",
+            "https://github.com/bhaveshsolanki159-codex",
+            "https://x.com/oyeebhao"
+        ]
+        }
+    </script>
+
+
+    <title>Experience | Bhavesh Solanki</title>
     <style>
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
             background-color: black;
+            color: white;
+        }
+
+        .Work {
+            max-width: 100vw;
+            padding: 40px 5vw;
         }
 
         .purple {
@@ -20,33 +71,105 @@
             color: grey;
         }
 
-        #element {
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .herosection {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            min-height: 60vh;
+            max-height: 80vh;
+            gap: 20px;
+        }
+
+        nav {
+            height: 60px;
+            align-items: center;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            color: rgb(134, 58, 205);
+            font-size: 1.03rem;
+        }
+
+        .herosection>nav.side-nav {
+            position: fixed;
+            top: 25vh;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            width: 60px;
+            height: 300px;
+            background-color: black;
+            border-radius: 0 10px 10px 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .herosection>nav.side-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .herosection>nav.side-nav ul li {
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .herosection>nav.side-nav ul li:hover {
             color: rgb(134, 58, 205);
         }
 
-        .Work {
-            max-width: 80vw;
-            margin: 40px auto;
-            height: auto;
-            padding: 10px 20px;
-        }
+
 
         .work-experience .work-container {
-            display: flex;
+            /* display: flex;
             flex-wrap: wrap;
             gap: 25px;
             justify-content: center;
             padding: 20px;
-            background-color: black;
+            background-color: black;*/
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(134, 58, 205, 0.3);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .work-experience .work-card {
-            /* Removed background color */
             background: transparent;
             border-radius: 10px;
-            /* box-shadow: 0 4px 15px rgba(134, 58, 205, 0.6); */
             color: white;
             width: 300px;
             padding: 20px;
@@ -64,8 +187,6 @@
 
         .work-experience .work-card:hover {
             border-color: white;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.7);
-            transform: none;
         }
 
         .work-experience .view-more-btn {
@@ -85,7 +206,6 @@
 
         .work-experience .view-more-btn:hover {
             background-color: white;
-            color: #6a0dad;
         }
 
         .work-experience .work-icon {
@@ -94,26 +214,6 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid white;
-        }
-
-        .work-experience .view-more-btn {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 5px 10px;
-            font-size: 0.8rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .work-experience .view-more-btn:hover {
-            background-color: white;
-            color: #6a0dad;
         }
 
         .work-experience .work-info {
@@ -138,76 +238,128 @@
             font-size: 0.9rem;
             margin: 0;
         }
+
+        .contact {
+            font-size: large;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: black;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+        }
+
+        .contact {
+            width: 33px;
+            text-align: center;
+
+        }
+
+        .contact span {
+            cursor: pointer;
+        }
     </style>
+
 </head>
 
 <body>
     <section class="Work work-experience">
         <span class="grey">what i had done before!</span>
         <h1 style="color:white; font-size: xx-large;">Work Experience</h1>
-        <div class="work-container">
-            <div class="work-card">
-                <img class="work-icon" src="youtube.webp" alt="Web Developer">
-                <div class="work-info">
-                    <h3>Web Developer</h3>
-                    <span class="work-duration">(2024-2025)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+
+        <div class="herosection">
+            <nav class="side-nav">
+                <ul>
+                    <li title="Home"><a href="index.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">🏠</span></a></li>
+                    <li title="About"><a href="about.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">👤</span></a></li>
+                    <li title="Projects"><a href="project.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">📁</span></a></li>
+                    <li title="Work"><a href="work.html" style="color: inherit; text-decoration: none;"><span
+                                class="nav-icon">💼</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="work-container">
+                <div class="work-card">
+                    <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                    <div class="work-info">
+                        <h3>Web Developer</h3>
+                        <span class="work-duration">(2024-2025)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="data.webp" alt="Data Analyst">
+                    <div class="work-info">
+                        <h3>Data Analyst</h3>
+                        <span class="work-duration">(2022-2024)</span>
+                        <span class="work-company">ScaleAI</span>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="social.webp" alt="Content Writer">
+                    <div class="work-info">
+                        <h3>Content Writer</h3>
+                        <span class="work-duration">(2023-2025)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="social.webp" alt="Social Media Manager">
+                    <div class="work-info">
+                        <h3>Social Media Manager</h3>
+                        <span class="work-duration">(2019-2021)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                    <div class="work-info">
+                        <h3>Web Developer</h3>
+                        <span class="work-duration">(2024-2025)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                    <div class="work-info">
+                        <h3>Web Developer</h3>
+                        <span class="work-duration">(2024-2025)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img class="work-icon" src="youtube.webp" alt="Web Developer">
+                    <div class="work-info">
+                        <h3>Web Developer</h3>
+                        <span class="work-duration">(2024-2025)</span>
+                        <span class="work-company">Freelancer</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
+                    </div>
                 </div>
             </div>
-            <div class="work-card">
-                <img class="work-icon" src="data.webp" alt="Data Analyst">
-                <div class="work-info">
-                    <h3>Data Analyst</h3>
-                    <span class="work-duration">(2022-2024)</span>
-                    <span class="work-company">ScaleAI</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
-                </div>
-            </div>
-            <div class="work-card">
-                <img class="work-icon" src="social.webp" alt="Content Writer">
-                <div class="work-info">
-                    <h3>Content Writer</h3>
-                    <span class="work-duration">(2023-2025)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
-                </div>
-            </div>
-            <div class="work-card">
-                <img class="work-icon" src="social.webp" alt="Social Media Manager">
-                <div class="work-info">
-                    <h3>Social Media Manager</h3>
-                    <span class="work-duration">(2019-2021)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, veritatis.</p>
-                </div>
-            </div>
-            <div class="work-card">
-                <img class="work-icon" src="youtube.webp" alt="Web Developer">
-                <div class="work-info">
-                    <h3>Web Developer</h3>
-                    <span class="work-duration">(2024-2025)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
-                </div>
-            </div>
-            <div class="work-card">
-                <img class="work-icon" src="youtube.webp" alt="Web Developer">
-                <div class="work-info">
-                    <h3>Web Developer</h3>
-                    <span class="work-duration">(2024-2025)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
-                </div>
-            </div>
-            <div class="work-card">
-                <img class="work-icon" src="youtube.webp" alt="Web Developer">
-                <div class="work-info">
-                    <h3>Web Developer</h3>
-                    <span class="work-duration">(2024-2025)</span>
-                    <span class="work-company">Freelancer</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dolor!</p>
-                </div>
+
+            <!-- social media link  -->
+            <div class="contact" style="width: 50px; height: 43vh; position: fixed; right: 10px; top:56vh;">
+                <span><a href="https://linkedin.com/in/
+                    bhavesh-solanki-5bb6b8325" style="text-decoration-line: none;" target="_blank"><img
+                            title="Linkedin" src="linkedin.png" width="34px"></a></span>
+                <span><a href="https://github.com/bhaveshsolanki159-codex" style="text-decoration-line: none;"
+                        target="_blank"><img title="Github" src="github.png" width="34px" alt=""></a></span>
+                <span><a href="https://x.com/oyeebhao" style="text-decoration-line: none;" target="_blank"><img
+                            title="Twitter" src="twitter.png" width="34px" alt=""></a></span>
+                <span><a href="mailto:your-bhaveshsolankibj960@gmail.com" style="text-decoration-line: none;"><img
+                            title="Mail" src="gmail.png" width="34px"></a></span>
             </div>
         </div>
     </section>
@@ -224,6 +376,10 @@
             });
         });
     </script>
+
+
 </body>
 
 </html>
+
+

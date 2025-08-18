@@ -202,25 +202,105 @@
         .contact {
             position: fixed;
             right: 0;
-            top: 42vh;
+            top: 50%;
+            transform: translateY(-50%);
             width: 50px;
-            height: 43vh;
+            height: 200px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            background-color: black;
+            justify-content: space-evenly;
+            background-color: rgba(20, 20, 20, 0.9);
             border-radius: 10px 0 0 10px;
             align-items: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(134, 58, 205, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .contact.active {
+            width: auto;
+            height: 60px;
+            flex-direction: row;
+            padding: 0 20px;
+            background-color: rgba(134, 58, 205, 0.2);
+            border: 1px solid rgba(134, 58, 205, 0.5);
         }
 
         .contact img {
-            width: 34px;
+            width: 30px;
+            height: 30px;
             transition: transform 0.3s ease;
+            /* filter: brightness(0) invert(1); */
+        }
+
+        .contact.active img {
+            margin: 0 10px;
         }
 
         .contact img:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
+            /* filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(134, 58, 205, 0.8)); */
         }
+
+        .buttons-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-family: 'Poppins', sans-serif;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .btn-resume {
+            background: linear-gradient(135deg, var(--main-purple), var(--hover-purple));
+            color: white;
+            box-shadow: 0 4px 15px rgba(134, 64, 244, 0.4);
+        }
+
+        .btn-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(134, 64, 244, 0.6);
+            background: linear-gradient(135deg, var(--hover-purple), var(--main-purple));
+        }
+
+        .btn-connect {
+            background: transparent;
+            color: var(--main-purple);
+            border-color: var(--main-purple);
+            box-shadow: 0 4px 15px rgba(134, 64, 244, 0.2);
+        }
+
+        .btn-connect:hover {
+            background: var(--main-purple);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(134, 64, 244, 0.4);
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+        } -->
 
         @media (max-width: 950px) {
 
@@ -238,6 +318,7 @@
                 border-radius: 0;
                 padding: 0;
                 z-index: 1000;
+                background: black;
             }
 
             .side-nav ul {
@@ -267,7 +348,7 @@
 
             .contact {
                 position: fixed;
-                bottom: 20%;
+                top:86vh;
                 right: 5px;
                 width: auto;
                 height: auto;
@@ -280,6 +361,7 @@
 
             .contact.active {
                 display: flex;
+                width: 100%;
             }
 
             .contact span {
@@ -308,6 +390,24 @@
 
             #contact-toggle:hover {
                 transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 950px) {
+            .action-buttons {
+                padding: 40px 20px 100px;
+                position: relative;
+                bottom: 22%;
+            }
+
+            .buttons-container {
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
             }
         }
     </style>
@@ -364,6 +464,29 @@
         <a href="https://x.com" target="_blank"><img src="twitter.png" alt="Twitter" /></a>
         <a href="mailto:your-bhaveshsolankibj960@gmail.com"><img src="gmail.png" alt="Gmail" /></a>
     </div>
+
+    <!-- Action Buttons Section -->
+    <section class="action-buttons" style="position: relative; bottom: 22%;">
+        <div class="buttons-container">
+            <a href="resume.pdf" class="btn btn-resume" target="_blank">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Resume
+            </a>
+            <a href="mailto:bhaveshsolankibj960@gmail.com" class="btn btn-connect">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Connect
+            </a>
+        </div>
+    </section>
 
     <!-- Floating toggle for contact -->
     <div id="contact-toggle">▲</div>
